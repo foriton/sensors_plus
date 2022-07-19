@@ -62,7 +62,7 @@ static void sendTriplet(Float64 x, Float64 y, Float64 z,
 - (FlutterError *)onListenWithArguments:(id)arguments
                               eventSink:(FlutterEventSink)eventSink {
   _initMotionManager();
-  _motionManager.accelerometerUpdateInterval=1.0/10.0;
+  _motionManager.accelerometerUpdateInterval=1.0/50.0;
   [_motionManager
       startAccelerometerUpdatesToQueue:[[NSOperationQueue alloc] init]
                            withHandler:^(CMAccelerometerData *accelerometerData,
@@ -90,7 +90,7 @@ static void sendTriplet(Float64 x, Float64 y, Float64 z,
 - (FlutterError *)onListenWithArguments:(id)arguments
                               eventSink:(FlutterEventSink)eventSink {
   _initMotionManager();
-  _motionManager.deviceMotionUpdateInterval=1.0/10.0;
+  _motionManager.deviceMotionUpdateInterval=1.0/50.0;
   [_motionManager
       startDeviceMotionUpdatesToQueue:[[NSOperationQueue alloc] init]
                           withHandler:^(CMDeviceMotion *data, NSError *error) {
